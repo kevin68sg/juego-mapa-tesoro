@@ -1,0 +1,84 @@
+:root{color-scheme:dark;--mar:#0e2a33;--mar2:#1d5566;--perg:#ecd9a6;--tinta:#4a2f17;--oro:#e0a526;--rojo:#c0392b;
+  --texto:#f6efe0;--rosa:#ff9ec7;--cristal:rgba(10,32,40,.94);--titulo:'Caveat','Segoe Script',cursive;--cuerpo:'Nunito',system-ui,sans-serif}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body,#root{height:100%;margin:0;overscroll-behavior:none}
+body{background:radial-gradient(ellipse at 50% 0%,var(--mar2),var(--mar) 75%) fixed var(--mar);color:var(--texto);font-family:var(--cuerpo);
+  touch-action:manipulation;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;-webkit-text-size-adjust:100%}
+.app{height:100%;height:100dvh;max-width:460px;margin:0 auto}
+.pantalla{height:100%;display:flex;flex-direction:column;overflow-y:auto;
+  padding:calc(env(safe-area-inset-top,0px) + 12px) 16px calc(env(safe-area-inset-bottom,0px) + 14px)}
+.pantalla.centro{align-items:center;justify-content:center;text-align:center;gap:14px}
+h1,h2{font-family:var(--titulo);color:var(--oro);margin:0;line-height:1.05}
+h1{font-size:clamp(44px,13vw,70px)} h2{font-size:32px}
+.texto{max-width:32ch;line-height:1.55;margin:0 0 6px}
+.cab{display:flex;justify-content:space-between;align-items:center;font-family:var(--titulo);font-size:26px;color:var(--oro);min-height:44px}
+.ayuda{margin:6px 0 10px;text-align:center;line-height:1.4;opacity:.92;font-size:15px}
+.cuerpo{flex:1;display:flex;flex-direction:column;align-items:center;gap:10px;min-height:0;width:100%}
+button,input{font:inherit}
+button:focus-visible{outline:3px solid var(--rosa);outline-offset:2px}
+.btn{background:var(--oro);color:#2b1a06;border:0;border-radius:999px;padding:13px 28px;min-height:48px;font-weight:700;font-size:17px;cursor:pointer}
+.btn:active{transform:scale(.96)} .btn.mini{padding:8px 18px;min-height:40px;font-size:15px}
+.card{background:var(--cristal);border:1px solid rgba(224,165,38,.4);border-radius:18px;padding:22px;width:100%;max-height:100%;overflow-y:auto;
+  user-select:text;-webkit-user-select:text}
+.card h2{margin-bottom:14px}
+.recuerdo{line-height:1.6;margin:0 0 16px}
+.acciones{display:flex;gap:8px}
+.fin{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.btn.sec{background:transparent;color:var(--oro);border:2px solid var(--oro)}
+/* Mapa */
+.mapa{flex:1;min-height:0;width:100%}
+.ruta{stroke:#4a2f17;stroke-width:3;stroke-dasharray:3 8;stroke-linecap:round;opacity:.55}
+.ruta.oro{stroke:#c98e0a;stroke-dasharray:none;opacity:1;stroke-width:4}
+.niebla{fill:#4a5a63;opacity:.7;filter:url(#difuso);pointer-events:none}
+.nodo text{fill:#4a2f17}.nodo{cursor:default}
+.nodo .disco{fill:#e8cf92;stroke:#4a2f17;stroke-width:3}
+.nodo.hecho .disco{fill:#f5e6b8;stroke:#c98e0a}
+.nodo.actual,.nodo.hecho{cursor:pointer}
+.nodo.actual .disco{animation:pulso 1.2s ease-in-out infinite;transform-box:fill-box;transform-origin:center;stroke:var(--rojo)}
+@keyframes pulso{50%{transform:scale(1.18)}}
+/* Rejillas */
+.rejilla{display:grid;gap:8px;width:min(340px,100%)}
+.memoria{grid-template-columns:repeat(4,1fr)}
+.ficha{aspect-ratio:1;border-radius:12px;border:2px solid var(--oro);background:var(--mar2);color:var(--oro);font-size:30px;padding:0;cursor:pointer}
+.ficha.visible{background:#f5e6b8}
+.simon{grid-template-columns:1fr 1fr;width:min(300px,100%)}
+.pad{aspect-ratio:1;border:0;border-radius:22px;opacity:.38;transition:opacity .1s,transform .1s;touch-action:none;cursor:pointer}
+.pad.on{opacity:1;transform:scale(1.04);box-shadow:0 0 28px rgba(255,255,255,.55)}
+.lienzo{flex:1;width:100%;min-height:0;border-radius:14px;overflow:hidden;touch-action:none}
+.snake-zona{flex:1;width:100%;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;touch-action:none}
+.snake-cv{width:min(340px,100%);aspect-ratio:1;border-radius:14px;border:2px solid var(--oro);display:block}
+/* Quiz */
+.op{display:block;width:100%;text-align:left;margin:8px 0;padding:14px;min-height:48px;border-radius:12px;color:var(--texto);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);cursor:pointer}
+.op.bien{background:#2e7d4f;border-color:#6fd49a}
+.op.mal{background:#8a2f2f;border-color:var(--rosa)}
+.barra{height:8px;border-radius:4px;background:rgba(255,255,255,.15);margin-bottom:14px;overflow:hidden}
+.barra div{height:100%;background:var(--oro);transition:width 1s linear}
+/* Palabra */
+.palabra{display:grid;gap:5px;margin-bottom:4px}
+.fila{display:flex;gap:5px;justify-content:center}
+.letra{width:min(42px,6dvh,calc((100vw - 56px)/var(--n)));aspect-ratio:1;display:flex;align-items:center;justify-content:center;
+  border:2px solid rgba(255,255,255,.28);border-radius:8px;font-weight:700;font-size:20px}
+.letra.v{background:#2e7d4f;border-color:#2e7d4f}.letra.a{background:#b8860b;border-color:#b8860b}.letra.x{background:#3a4650;border-color:#3a4650}
+.aviso{color:var(--rosa);min-height:1.4em;margin:2px 0 8px;font-size:14px}
+.teclado{display:grid;gap:5px;width:100%}
+.fila-t{display:flex;gap:4px;justify-content:center}
+.tecla{flex:1;min-width:0;height:min(46px,6.4dvh);border:0;border-radius:7px;background:#38606e;color:var(--texto);font-weight:700;font-size:16px;padding:0;cursor:pointer}
+.tecla.ancha{flex:1.6;font-size:13px}
+.tecla.v{background:#2e7d4f}.tecla.a{background:#b8860b}.tecla.x{background:#25343b;color:#8a9aa2}
+/* Cofre y carta */
+.cofre{font-size:110px;background:none;border:0;cursor:pointer;filter:drop-shadow(0 0 24px rgba(224,165,38,.6))}
+.cofre.abre{animation:abre 1.6s ease-in-out}
+@keyframes abre{0%,40%{transform:rotate(-6deg)}20%,60%{transform:rotate(6deg)}100%{transform:scale(1.6);opacity:.2}}
+.carta{white-space:pre-wrap;line-height:1.65;min-height:12em;text-align:left}
+.resp{position:relative;height:130px;margin-top:12px}
+.resp .btn{position:absolute;top:36px}
+.resp .si{left:14%}
+.resp .no{left:58%;background:#5d6d74;color:#fff;transition:left .18s,top .18s}
+@media (prefers-reduced-motion:reduce){.nodo.actual .disco,.cofre.abre{animation:none}.no,.pad{transition:none}}
+/* Arreglos de cabecera y botones */
+.btn{font-family:var(--cuerpo)}
+.cab{gap:10px}
+.cab h2{flex:1;min-width:0;font-size:clamp(22px,7vw,30px)}
+.acciones{align-items:center;flex-shrink:0}
+.fin{width:100%;max-width:340px;margin-left:auto;margin-right:auto}
+.fin .btn{flex:1 1 auto}
