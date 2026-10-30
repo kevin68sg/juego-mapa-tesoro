@@ -45,7 +45,7 @@ Aquí va la carta de verdad: escribe aquí lo que quieras decirle, lo que han vi
 
 Así que me queda una pregunta:
 
-¿Quieres salir conmigo a cenar?`
+¿Quieres...? (aqui le haces la pregunta)`
 
 // Lo que aparece cuando responde "Sí"
 export const DESPEDIDA = "¡Genial! Ya no hay vuelta atrás. 💫"
