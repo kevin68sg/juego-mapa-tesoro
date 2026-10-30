@@ -1,46 +1,55 @@
 // ============================================================
 //  TODO LO PERSONAL VA AQUÍ. Edita este archivo y ya.
+//  Sustituye los textos de ejemplo por vuestros recuerdos.
 // ============================================================
-export const NOMBRE = "Esther"
-export const BIENVENIDA = "el pirata Kevin ha escondido un tesoro solo para ti... Supera las seis pruebas y reclama tu recompensa. Aunque cuidado, que este pirata tiene otras intenciones contigo, ya tu veras... 😏❤️"
+
+// Nombre de la persona a la que va dirigido el juego
+export const NOMBRE = "Nombre"
+
+// Texto de la pantalla de inicio, debajo de "Feliz cumpleaños"
+export const BIENVENIDA = "Un pirata ha escondido un tesoro solo para ti. Supera las seis pruebas y reclama tu recompensa."
 
 // Icono de cada punto del mapa (6) y lo que se revela al superar su prueba
 export const ICONOS = ["🏝️", "🌴", "⛰️", "🏰", "🌋", "⚓"]
 export const RECUERDOS = [
-  { titulo: "Primera pista", texto: "Aquí va el recuerdo 1: jajaja te acuerdas cuando te hable por primera vez ahi en el trabajo, tenia un poco de miedo la verdad, pero resulto bien porque despues te invite a quedar." },
-  { titulo: "Segunda pista", texto: "Aquí va el recuerdo 2: cuando me contaste que la gente te decia gitana jajajaja ." },
-  { titulo: "Tercera pista", texto: "Aquí va el recuerdo 3: pffff esas fiestas de sanse inolvidables eh, pasar de ir con marga y caro, a ir conmigo de aventuras." },
-  { titulo: "Cuarta pista", texto: "Aquí va el recuerdo 4: lo de ir a comer por primera vez y que sea el burguer? eh a mi me rento, a te dije que era un chico de barrio ajajjaja." },
-  { titulo: "Quinta pista", texto: "Aquí va el recuerdo 5: pfff cuando te vi por primera vez en fiestas tenia unos nervios de locos, la cervesa me sirvio para soltarme un poco, y lo mejor esos fuegos artificiales y el beso de despedida.💋" },
-  { titulo: "Última pista", texto: "Aquí va el recuerdo 6: me gusta que tenemos algunas cosas en comun que no pense tener con una mujer, espero poder seguir descubriendo cosas de ti, asi como lo impulsiva que eres en el fornite jajaja ❤️." }
+  { titulo: "Primera pista", texto: "Recuerdo 1: cuenta cómo os conocisteis." },
+  { titulo: "Segunda pista", texto: "Recuerdo 2: una anécdota o broma interna." },
+  { titulo: "Tercera pista", texto: "Recuerdo 3: un lugar o una fiesta que no olvidaréis." },
+  { titulo: "Cuarta pista", texto: "Recuerdo 4: vuestra primera cita o salida." },
+  { titulo: "Quinta pista", texto: "Recuerdo 5: un momento que te hizo sentir especial." },
+  { titulo: "Última pista", texto: "Recuerdo 6: lo que más te gusta de ella o de vuestra relación." }
 ]
 
-// Minijuego "Parejas": 6 emojis que representen cosas vuestras (se duplican solos)
-export const MEMORIA = ["👩🏻", "👦🏽", "🎵", "🎆", "🎬", "🐢"]
+// Minijuego "Parejas": 6 emojis DISTINTOS que representen cosas vuestras (se duplican solos)
+export const MEMORIA = ["⭐", "🎵", "🌙", "🎬", "☕", "🐢"]
 
-// Minijuego "Relámpago": 4 preguntas, 10 s cada una, hay que acertar 3
+// Minijuego "Relámpago": 4 preguntas, 10 s cada una, hay que acertar 3.
+// "correcta" es la posición de la respuesta correcta en "opciones", empezando a contar desde 0.
 export const QUIZ = [
-  { pregunta: "¿Dónde nos conocimos?", opciones: ["fiestas de sanse", "cashconverts", "la calle", "diversia"], correcta: 1 },
-  { pregunta: "¿que artista tenemos muy en comun?", opciones: ["Arcangel", "travis", "Bad gyal", "carti"], correcta: 0 },
-  { pregunta: "¿que comimos despues de ir al monasterio?", opciones: ["Burger", "Sushi", "pizza", "Tacos"], correcta: 0 },
-  { pregunta: "¿quien era nuestro pana en el cash?", opciones: ["kevin2", "marga", "naomi", "el Fer"], correcta: 3 }
+  { pregunta: "¿Dónde nos conocimos?", opciones: ["Opción A (esta)", "Opción B", "Opción C", "Opción D"], correcta: 0 },
+  { pregunta: "¿Qué artista o canción tenemos en común?", opciones: ["Opción A", "Opción B(esta)", "Opción C", "Opción D"], correcta: 1 },
+  { pregunta: "¿Qué comimos en nuestra primera salida?", opciones: ["Opción A", "Opción B(esta)", "Opción C", "Opción D"], correcta: 2 },
+  { pregunta: "¿Quién era nuestro amigo en común?", opciones: ["Opción A", "Opción B", "Opción C(esta)", "Opción D"], correcta: 3 }
 ]
 
 // Minijuego "Palabra secreta": una palabra de 4 a 7 letras con significado para vosotros
-export const PALABRA = "Sanse"
-export const PISTA_PALABRA = "lugar donde nos vimos por primera vez jajaja."
+export const PALABRA = "Luna"
+export const PISTA_PALABRA = "Escribe aquí una pista sobre la palabra."
 
-export const CARTA = `Esther,
+// Carta final: se escribe con efecto máquina de escribir. Termina con la pregunta que quieras hacer.
+export const CARTA = `Nombre,
 
-Hice este mapa para ti porque pues queria darte algo de cumple que nadie te haya dado nunca jajajaj.
+Hice este mapa para ti porque quería regalarte algo diferente.
 
-Aquí va la carta de verdad: la verdad esque ya te lo he dicho pero eres
-muuuuuy linda y pues seguir conociendonos pffff hemos pasado cosas bonitas creo ajajaj
-y pues ojala seguir asi hasta el dia que decidamos ser algo mas...
-lo bueno de hacer esto esque es algo que te queda para siempre, y pues cada vez que juegues 
-o probablemente pensaras en mi jajajaja, y pues nada feliz cumple mi niña medio gitana
+Aquí va la carta de verdad: escribe aquí lo que quieras decirle, lo que han vivido juntos y lo que esperas del futuro.
 
 Así que me queda una pregunta:
 
-¿nos damos unos buenos besitos y abracitos?😘`
-export const DESPEDIDA = "pfff sabia que no podias negarte jajajaja (ya en serio, vamos a quedar y celebramos tu cumple). 💫"
+¿Quieres salir conmigo a cenar?`
+
+// Lo que aparece cuando responde "Sí"
+export const DESPEDIDA = "¡Genial! Ya no hay vuelta atrás. 💫"
+
+
+
+
